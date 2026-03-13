@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/variable/pretendardvariable.min.css');
+
+:root {
+  --font-size: 18px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --radius: 0.625rem;
+}
+
+@layer base {
+  body {
+    font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    color: #1A1A1A;
+    word-break: keep-all;
+    margin: 0;
+  }
+}
+
+.section-padding { padding: 8rem 1.5rem; }
+
+.process-container-4step {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.process-line {
+  position: absolute;
+  top: 50%; left: 10%; right: 10%;
+  height: 1px;
+  background-color: #DDD;
+  z-index: 1;
+}
+
+.circle-step {
+  position: relative; z-index: 2;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.circle-white { background-color: white; border: 1px solid #EEE; }
+.circle-dark { background-color: #2D3648; color: white; }
+.step-num { color: #0084ff; font-weight: 800; font-size: 14px; margin-bottom: 5px; }
+
+.video-wrapper {
+  background: #2D3648; border-radius: 16px; overflow: hidden;
+  position: relative; padding-bottom: 56.25%; height: 0;
+}
+.video-wrapper iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; z-index: 1;
+}
+
+.coaching-circle {
+  width: 140px; height: 140px; border-radius: 50%;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.coaching-circle-blue { background: linear-gradient(135deg, #0084ff 0%, #0066cc 100%); }
+.coaching-circle-dark { background: linear-gradient(135deg, #2D3648 0%, #1a2332 100%); }
+.coaching-phase { color: white; font-weight: 800; font-size: 15px; }
+
+.cta-animate { animation: pulse-subtle 2s infinite ease-in-out; }
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
