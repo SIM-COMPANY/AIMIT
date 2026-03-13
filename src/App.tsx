@@ -1,14 +1,19 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Start from './pages/Start'
+import CaseUnclejoe from './pages/CaseUnclejoe'
+import CaseHyunbo from './pages/CaseHyunbo'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/start" element={<Start />} />
+      <Route path="/cases" element={<Navigate to="/" replace />} />
+      <Route path="/cases/unclejoe" element={<CaseUnclejoe />} />
+      <Route path="/cases/hyunbo" element={<CaseHyunbo />} />
     </Routes>
   )
 }
