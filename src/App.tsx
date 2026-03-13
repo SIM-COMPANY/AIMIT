@@ -5,12 +5,16 @@ import Footer from './components/Footer'
 import Start from './pages/Start'
 import CaseUnclejoe from './pages/CaseUnclejoe'
 import CaseHyunbo from './pages/CaseHyunbo'
+import About from './pages/About'
+import Letters from './pages/Letters'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/start" element={<Start />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/letters" element={<Letters />} />
       <Route path="/cases" element={<Navigate to="/" replace />} />
       <Route path="/cases/unclejoe" element={<CaseUnclejoe />} />
       <Route path="/cases/hyunbo" element={<CaseHyunbo />} />
