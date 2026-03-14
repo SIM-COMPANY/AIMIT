@@ -3,30 +3,30 @@ import Footer from '../components/Footer'
 
 const letters = [
   {
-    no: '0',
+    no: '1',
     title: '나는 왜 15년 동안 내 것이 없었나',
-    date: '2026-03-13',
+    date: '2026-03-14',
     url: 'https://maily.so/hyunvo/posts/10z30e4jzlw',
     published: true,
   },
   {
-    no: '1',
-    title: '유튜브 영상을 직접 보지 않아도 되는 날이 왔습니다',
-    date: '2026-03-17',
-    url: null,
-    published: false,
-  },
-  {
     no: '2',
-    title: 'AI한테 내 인생을 구술했더니 패턴이 보였다',
-    date: '2026-03-24',
+    title: '자동화 하나 만들려다 반나절 날렸습니다',
+    date: '2026-03-21',
     url: null,
     published: false,
   },
   {
     no: '3',
+    title: 'AI한테 내 인생을 구술했더니 패턴이 보였다',
+    date: '2026-03-28',
+    url: null,
+    published: false,
+  },
+  {
+    no: '4',
     title: 'AI와 토론했습니다, 결정은 내가 했습니다',
-    date: '2026-03-31',
+    date: '2026-04-04',
     url: null,
     published: false,
   },

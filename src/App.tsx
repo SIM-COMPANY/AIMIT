@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Start from './pages/Start'
+import CasesList from './pages/CasesList'
 import CaseUnclejoe from './pages/CaseUnclejoe'
 import CaseHyunbo from './pages/CaseHyunbo'
 import About from './pages/About'
 import Letters from './pages/Letters'
+import Series from './pages/Series'
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
       <Route path="/start" element={<Start />} />
       <Route path="/about" element={<About />} />
       <Route path="/letters" element={<Letters />} />
-      <Route path="/cases" element={<Navigate to="/" replace />} />
+      <Route path="/series" element={<Series />} />
+      <Route path="/cases" element={<CasesList />} />
       <Route path="/cases/unclejoe" element={<CaseUnclejoe />} />
       <Route path="/cases/hyunbo" element={<CaseHyunbo />} />
     </Routes>
