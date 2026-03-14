@@ -29,6 +29,7 @@ function Home() {
       <Nav />
       <Hero />
       <Process />
+      <Philosophy />
       <Cases />
       <Diagnosis />
       <CTA />
@@ -104,6 +105,30 @@ function Process() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── Philosophy ──────────────────────────────────── */
+function Philosophy() {
+  return (
+    <section className="py-24 px-6 bg-white border-t border-[#E5E7EB]">
+      <div className="max-w-3xl mx-auto">
+        <p className="text-[17px] text-[#6B7280] leading-relaxed mb-6">
+          요즘 AI 서비스는 3분 만에 만들어준다고 합니다.<br />
+          구조는 그렇게 잡을 수 있습니다.
+        </p>
+        <p className="text-[17px] text-[#6B7280] leading-relaxed mb-6">
+          하지만 진짜 내 이야기가 되려면,<br />
+          온기와 서사를 직접 넣는 수고가 남습니다.
+        </p>
+        <p
+          className="font-serif font-bold text-[#1A1A1A] leading-snug"
+          style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}
+        >
+          그 수고를 같이 하는 곳입니다.
+        </p>
       </div>
     </section>
   )
