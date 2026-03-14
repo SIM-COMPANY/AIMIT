@@ -49,6 +49,38 @@ export default function About() {
 
           <div>
             <p className="text-[17px] text-[#6B7280] leading-relaxed mb-4">
+              그런데 어느 날 다르게 봤습니다.
+            </p>
+            <p className="text-[17px] text-[#6B7280] leading-relaxed mb-4">
+              15년 동안 가장 보람 있었던 순간을 떠올려봤습니다.
+              내가 빛나는 순간이 아니었습니다.
+              내가 만든 구조 위에서 다른 사람이 빛나는 순간이었습니다.
+            </p>
+            <p className="text-[17px] text-[#6B7280] leading-relaxed">
+              저는 주연이 아니라 스태프였습니다.
+              뒤에서 실행되게 하는 사람. 그게 제 방식이었습니다.
+            </p>
+          </div>
+
+          <div className="pl-6 border-l-2 border-[#E5E7EB]">
+            <p className="text-[17px] text-[#6B7280] leading-relaxed italic">
+              부모님은 30년 동안 농사를 지었습니다.
+              좋은 쌀이 있었습니다. 그런데 팔 방법이 없었습니다.
+              마케팅을 15년 한 저도 막막했습니다.
+              재료가 없는 게 아니었습니다. 구조가 없는 거였습니다.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-[17px] text-[#6B7280] leading-relaxed mb-4">
+              그게 부모님만의 문제가 아니었습니다.
+              오래 일한 사람들이 다 그랬습니다.
+              재료는 충분했습니다. 꺼내는 방법을 몰랐을 뿐이었습니다.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-[17px] text-[#6B7280] leading-relaxed mb-4">
               어느 날 AI와 일하기 시작했습니다.
               처음엔 도구였습니다. 쓰다 보니 달랐습니다.
             </p>
@@ -71,6 +103,7 @@ export default function About() {
               그 사람들이 처음으로 자기 공간을 짓는 걸 돕고 싶었습니다.
             </p>
             <p className="text-[17px] text-[#6B7280] leading-relaxed">
+              남을 빛나게 하는 것이 — 제가 빛나는 방식입니다.<br />
               그게 Aimit입니다.
             </p>
           </div>
