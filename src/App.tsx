@@ -207,12 +207,12 @@ function Cases() {
               </p>
 
               {/* 링크 */}
-              <a
-                href={`/cases/${c.id}`}
+              <Link
+                to={`/cases/${c.id}`}
                 className="text-[#FF5C35] font-semibold text-sm hover:underline"
               >
                 이야기 보기 →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
