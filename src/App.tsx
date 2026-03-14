@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
@@ -29,6 +30,7 @@ function Home() {
       <Hero />
       <Process />
       <Cases />
+      <Diagnosis />
       <CTA />
       <Footer />
     </div>
@@ -189,6 +191,132 @@ function Cases() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── Diagnosis ───────────────────────────────────── */
+const diagnosisQuestions = [
+  { q: '내가 누구에게 무엇을 파는지 한 문장으로 말할 수 있다', level: 1 },
+  { q: '랜딩페이지와 온라인 신청서가 있다', level: 2 },
+  { q: '재구매 고객이 있고, 그들이 모인 공간이 있다', level: 3 },
+  { q: '월 매출이 손익분기점을 넘고 있다', level: 4 },
+  { q: '고객 유입 채널이 2개 이상이고 팬이 생기고 있다', level: 5 },
+]
+
+const diagnosisResults = [
+  {
+    level: 1,
+    tag: 'Level 1',
+    title: '방향부터 잡겠습니다.',
+    desc: '비즈니스 모델이 먼저입니다. 누구에게 무엇을 팔지 명확하게 만드는 것부터 시작합니다.',
+    cta: '비즈니스 모델 설계하기',
+  },
+  {
+    level: 2,
+    tag: 'Level 2',
+    title: '온라인 판매 흐름을 만들겠습니다.',
+    desc: '랜딩페이지·신청서·CRM까지 광고 → 신청 → 고객 관리 흐름을 자동화합니다.',
+    cta: '퍼널 + CRM 세팅하기',
+  },
+  {
+    level: 3,
+    tag: 'Level 3',
+    title: '재구매 구조를 만들겠습니다.',
+    desc: '단골풀을 세팅하고 뉴스레터를 시작합니다. 신규 고객보다 단골이 더 안정적입니다.',
+    cta: '단골풀 세팅하기',
+  },
+  {
+    level: 4,
+    tag: 'Level 4',
+    title: '성장을 다시 시작하겠습니다.',
+    desc: '유입 채널을 늘리고 생산 시스템을 구축합니다. 나 없이도 돌아가는 구조로 만듭니다.',
+    cta: '스케일업 시작하기',
+  },
+  {
+    level: 5,
+    tag: 'Level 5',
+    title: '다음 시장으로 갑니다.',
+    desc: '팬덤 시스템과 시장 다각화. 지금까지 쌓인 것을 자산으로 확장합니다.',
+    cta: '다각화 설계하기',
+  },
+]
+
+function Diagnosis() {
+  const [checked, setChecked] = useState<boolean[]>([false, false, false, false, false])
+
+  const toggle = (i: number) => {
+    setChecked((prev) => {
+      const next = [...prev]
+      next[i] = !next[i]
+      return next
+    })
+  }
+
+  const firstNo = checked.findIndex((v) => !v)
+  const levelIndex = firstNo === -1 ? 4 : firstNo
+  const result = diagnosisResults[levelIndex]
+  const started = checked.some((v) => v)
+
+  return (
+    <section className="py-24 px-6 bg-[#F8F7F4]">
+      <div className="max-w-3xl mx-auto">
+        <h2
+          className="font-serif font-bold text-[#1A1A1A] mb-4 leading-tight"
+          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+        >
+          지금 어디쯤인가요?
+        </h2>
+        <p className="text-[16px] text-[#6B7280] mb-12">해당하는 항목을 선택해주세요.</p>
+
+        <div className="space-y-4 mb-12">
+          {diagnosisQuestions.map((item, i) => (
+            <button
+              key={i}
+              onClick={() => toggle(i)}
+              className={`w-full text-left flex items-center gap-4 px-6 py-4 rounded-xl border transition-all ${
+                checked[i]
+                  ? 'border-[#FF5C35] bg-white text-[#1A1A1A]'
+                  : 'border-[#E5E7EB] bg-white text-[#6B7280]'
+              }`}
+            >
+              <span
+                className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${
+                  checked[i] ? 'border-[#FF5C35] bg-[#FF5C35]' : 'border-[#D1D5DB]'
+                }`}
+              >
+                {checked[i] && (
+                  <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </span>
+              <span className="text-[15px] leading-relaxed">{item.q}</span>
+            </button>
+          ))}
+        </div>
+
+        {started && (
+          <div className="bg-white border border-[#E5E7EB] rounded-xl p-8">
+            <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full border border-[#FF5C35] text-[#FF5C35] mb-4">
+              {result.tag}
+            </span>
+            <h3
+              className="font-serif font-bold text-[#1A1A1A] mb-3 leading-tight"
+              style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)' }}
+            >
+              {result.title}
+            </h3>
+            <p className="text-[15px] text-[#6B7280] leading-relaxed mb-6">{result.desc}</p>
+            <Link
+              to="/start"
+              className="inline-block px-6 py-3 bg-[#FF5C35] text-white font-semibold text-[15px] rounded-md hover:bg-[#e54e2a] transition-colors"
+            >
+              {result.cta} →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
